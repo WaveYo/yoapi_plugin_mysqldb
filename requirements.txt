@@ -1,0 +1,8 @@
+# MySQL数据库插件依赖
+fastapi>=0.104.0
+python-dotenv>=1.0.0
+aiomysql>=0.2.0
+asyncmy>=0.2.7
+pymysql>=1.1.0
+sqlalchemy>=2.0.0
+alembic>=1.12.0
