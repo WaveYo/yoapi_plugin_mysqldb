@@ -11,8 +11,8 @@ from typing import Dict, List, Optional, Any, Set
 from datetime import datetime
 from pathlib import Path
 
-from core.connection import connection_manager
-from exceptions.database import (
+from ..core.connection import connection_manager
+from ..exceptions.database import (
     DatabaseMigrationError,
     DatabaseQueryError,
     TableCreationError

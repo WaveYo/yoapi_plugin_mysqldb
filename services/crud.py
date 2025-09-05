@@ -9,8 +9,8 @@ from typing import Any, Dict, List, Optional, Tuple, Union, TypeVar, Generic
 from contextlib import asynccontextmanager
 from datetime import datetime
 
-from core.connection import connection_manager
-from exceptions.database import (
+from ..core.connection import connection_manager
+from ..exceptions.database import (
     DatabaseQueryError,
     DatabaseInsertError,
     DatabaseUpdateError,

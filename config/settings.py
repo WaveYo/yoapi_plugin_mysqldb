@@ -3,7 +3,7 @@
 import os
 from typing import Dict, Any, Optional
 from dataclasses import dataclass
-from core.env_validator import get_env_validator, EnvVarType
+from ..utils.env_validator import get_env_validator, EnvVarType
 
 
 @dataclass

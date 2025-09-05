@@ -13,8 +13,8 @@ import aiomysql
 from asyncmy import connect as asyncmy_connect
 from asyncmy.connection import Connection as AsyncmyConnection
 
-from config import DatabaseConfig, get_database_config
-from exceptions.database import (
+from ..config.settings import DatabaseConfig, config_manager
+from ..exceptions.database import (
     DatabaseConnectionError,
     DatabaseQueryError,
     ConnectionPoolExhaustedError,
@@ -232,7 +232,7 @@ class DatabaseConnectionManager:
             config: 数据库配置，如果为None则使用默认配置
         """
         if config is None:
-            config = get_database_config()
+            config = config_manager.get_default_config()
             
         pool = AsyncConnectionPool(
             config=config,

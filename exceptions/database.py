@@ -17,8 +17,33 @@ class DatabaseConnectionError(DatabaseError):
     pass
 
 
+class DatabaseRouterError(DatabaseError):
+    """数据库路由错误"""
+    pass
+
+
+class NoAvailableDatabaseError(DatabaseError):
+    """无可用数据库错误"""
+    pass
+
+
 class DatabaseQueryError(DatabaseError):
     """查询执行错误"""
+    pass
+
+
+class DatabaseInsertError(DatabaseError):
+    """数据插入错误"""
+    pass
+
+
+class DatabaseUpdateError(DatabaseError):
+    """数据更新错误"""
+    pass
+
+
+class DatabaseDeleteError(DatabaseError):
+    """数据删除错误"""
     pass
 
 
@@ -27,8 +52,18 @@ class DatabaseTransactionError(DatabaseError):
     pass
 
 
+class TransactionError(DatabaseError):
+    """事务错误"""
+    pass
+
+
 class DatabaseMigrationError(DatabaseError):
     """迁移执行错误"""
+    pass
+
+
+class TableCreationError(DatabaseError):
+    """表创建错误"""
     pass
 
 
@@ -39,6 +74,11 @@ class DatabaseConfigError(DatabaseError):
 
 class DatabaseTimeoutError(DatabaseError):
     """超时错误"""
+    pass
+
+
+class ConnectionPoolExhaustedError(DatabaseError):
+    """连接池耗尽错误"""
     pass
 
 

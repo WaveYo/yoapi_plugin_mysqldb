@@ -7,9 +7,9 @@ import asyncio
 from typing import Dict, List, Optional, Any, Union, Callable
 from contextlib import asynccontextmanager
 
-from ..config.settings import DatabaseConfig, get_database_config_manager
-from ..core.connection import AsyncConnectionPool, get_connection_pool
-from ..services.crud import CRUDService, TransactionManager, QueryBuilder, get_crud_service
+from ..config.settings import DatabaseConfig, config_manager
+from ..core.connection import AsyncConnectionPool
+from ..services.crud import CRUDService, TransactionManager, QueryBuilder
 from ..features.migration import MigrationManager, TableManager
 from ..features.router import MultiDatabaseManager, DatabaseRouter, get_multi_database_manager, init_multi_database_manager
 from ..exceptions.database import (
@@ -40,7 +40,9 @@ class DatabaseInternalAPI:
             config_manager: 配置管理器实例，如果为None则使用全局实例
         """
         if config_manager is None:
-            config_manager = get_database_config_manager()
+            # 使用全局配置管理器实例
+            from ..config.settings import config_manager
+            config_manager = config_manager
         
         # 初始化多数据库管理器
         self._multi_db_manager = init_multi_database_manager()

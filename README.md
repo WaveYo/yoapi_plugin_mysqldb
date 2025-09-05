@@ -11,7 +11,8 @@ WaveYo-API MySQL 8.0+ 数据库插件
 - 🗃️ **自动迁移** - 数据库表结构初始化和版本控制
 - ⚡ **CRUD操作** - 完整的增删改查和事务管理
 - 🔄 **读写分离** - 支持主从复制和读写分离配置
-- 🛡️ **异常处理** - 12种数据库异常类型，错误处理完善
+- 🛡️ **异常处理** - 14种数据库异常类型，错误处理完善
+- 💻️ **性能监控** - 数据库连接和查询性能监控分析
 - 📝 **查询构建器** - 灵活的查询条件构建和分页支持
 - 🔌 **内部API** - 插件内部公共接口，非HTTP API
 
@@ -132,7 +133,7 @@ def register(app, **dependencies):
 
 ```python
 from fastapi import APIRouter, Depends
-from plugins.yoapi_plugin_mysqldb.interfaces.internal_api import DatabaseAPI
+from .interfaces.internal_api import DatabaseAPI
 
 router = APIRouter()
 
@@ -201,7 +202,7 @@ yoapi-plugin-mysqldb/
 │   └── settings.py        # 数据库配置类
 ├── exceptions/            # 异常处理
 │   ├── __init__.py
-│   └── database.py       # 12种数据库异常
+│   └── database.py       # 14种数据库异常
 ├── core/                  # 核心功能
 │   ├── __init__.py
 │   └── connection.py     # 连接池管理
@@ -211,6 +212,7 @@ yoapi-plugin-mysqldb/
 ├── features/             # 特性模块
 │   ├── __init__.py
 │   ├── migration.py     # 数据库迁移
+│   ├── monitor.py       # 数据库监控和性能分析
 │   └── router.py        # 多数据库路由
 ├── interfaces/           # 接口层
 │   ├── __init__.py
@@ -228,7 +230,7 @@ yoapi-plugin-mysqldb/
 
 ### 异常类型
 
-插件定义了12种数据库异常：
+插件定义了14种数据库异常：
 - `DatabaseConnectionError` - 数据库连接错误
 - `DatabaseQueryError` - 查询执行错误
 - `DatabaseTransactionError` - 事务处理错误
@@ -241,6 +243,8 @@ yoapi-plugin-mysqldb/
 - `DatabaseLockError` - 锁等待错误
 - `DatabasePermissionError` - 权限错误
 - `DatabaseRuntimeError` - 运行时错误
+- `DatabaseRouterError` - 数据库路由错误
+- `NoAvailableDatabaseError` - 无可用数据库错误
 
 ### 扩展开发
 
@@ -277,11 +281,6 @@ yoapi-plugin-mysqldb/
 LOG_LEVEL=DEBUG python main.py
 ```
 
-## 版本历史
-
-- v0.1.0 - 初始版本，支持MySQL 8.0+数据库操作
-- 支持多数据库、连接池、迁移、事务等完整功能
-
 ## 许可证
 
 [MIT-License](LICENSE)
@@ -289,3 +288,9 @@ LOG_LEVEL=DEBUG python main.py
 ## 支持
 
 如有问题，请创建Issue或联系开发团队。
+
+
+---
+
+*版本: 0.1.2*
+*最后更新: 2025-09-05*

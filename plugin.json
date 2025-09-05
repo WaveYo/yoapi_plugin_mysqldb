@@ -1,9 +1,9 @@
 {
   "name": "yoapi-plugin-mysqldb",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "MySQL 8.0+ 数据库支持插件，提供内部API接口，支持数据库插入、结构初始化、多库调用等功能",
   "author": "WaveYo Development Team",
   "priority": 80,
-  "dependencies": ["yoapi-plugin-log"],
+  "dependencies": ["yoapi_plugin_log"],
   "tags": ["database", "mysql", "async", "internal-api", "crud", "migration"]
 }
