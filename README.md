@@ -17,9 +17,38 @@ WaveYo-API MySQL 8.0+ 数据库插件
 
 ## 安装
 
-插件会自动被WaveYo-API核心检测和加载。确保已安装所需依赖：
+### 1. 通过git clone安装
+
+1. 进入插件目录克隆插件
+```bash
+cd <your-WaveYo-API-project>/plugins
+git clone https://github.com/WaveYo/yoapi-plugin-mysqldb.git
+```
+
+2. 运行 WaveYo-API 将自动安装依赖启用插件
+参考 [WaveYo-API文档](https://github.com/WaveYo/WaveYo-API?tab=readme-ov-file#1-%E4%BC%A0%E7%BB%9F%E6%96%B9%E5%BC%8F)
+
+插件会自动被WaveYo-API核心检测和加载。
 
 
+### 2. 通过yoapi-cli安装
+
+参考[yoapi-cli 文档](https://github.com/WaveYo/yoapi-cli?tab=readme-ov-file#%E6%8F%92%E4%BB%B6%E7%AE%A1%E7%90%86)
+
+1. 安装插件
+
+```bash
+# 在你的项目根目录下载并安装插件
+yoapi plugin download WaveYo/yoapi-plugin-mysqldb
+
+# 检查插件是否安装
+yoapi plugin list
+```
+
+2. 运行 WaveYo-API 将自动安装依赖启用插件
+参考 [WaveYo-API文档](https://github.com/WaveYo/WaveYo-API?tab=readme-ov-file#1-%E4%BC%A0%E7%BB%9F%E6%96%B9%E5%BC%8F)
+
+插件会自动被WaveYo-API核心检测和加载。
 
 ## 环境变量配置
 
